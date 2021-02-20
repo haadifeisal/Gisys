@@ -67,3 +67,5 @@ C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\bin\Debug\
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\obj\Debug\netcoreapp3.1\Gisys.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\obj\Debug\netcoreapp3.1\Gisys.WebApi.csproj.CopyComplete
+C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\bin\Debug\netcoreapp3.1\Gisys.WebApi.xml
+C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi\obj\Debug\netcoreapp3.1\Gisys.WebApi.xml

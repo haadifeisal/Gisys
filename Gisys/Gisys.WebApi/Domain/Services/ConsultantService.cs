@@ -21,6 +21,13 @@ namespace Gisys.WebApi.Domain.Services
             _mapper = mapper;
         }
 
+        public Consultant GetConsultant(Guid consultantId)
+        {
+            var consultant = _context.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
+
+            return consultant;
+        }
+
         public double SumOfBillingPoints()
         {
             double sum = 0;
