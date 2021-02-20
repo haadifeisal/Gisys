@@ -9,7 +9,7 @@ namespace Gisys.WebApi.Repository.Gisys
     {
         public Guid ConsultantId { get; set; }
         public string Name { get; set; }
-        public int? YearOfEmployment { get; set; }
-        public int? ChargedHours { get; set; }
+        public int YearOfEmployment { get; set; }
+        public int ChargedHours { get; set; }
     }
 }
