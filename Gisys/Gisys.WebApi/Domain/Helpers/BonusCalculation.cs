@@ -8,19 +8,19 @@ namespace Gisys.WebApi.Domain.Helpers
     public class BonusCalculation
     {
 
-        public static double LoyaltyFactor(int year)
+        public static double CalculateLoyaltyFactor(double yearOfEmployement)
         {
-            if(year < 1)
+            if(yearOfEmployement < 1)
             {
                 return 1;
             }
 
-            if(year > 5)
+            if(yearOfEmployement > 5)
             {
-                return 5.5;
+                return 1.5;
             }
 
-            switch (year)
+            switch (yearOfEmployement)
             {
                 case 1:
                     return 1.1;
@@ -31,7 +31,7 @@ namespace Gisys.WebApi.Domain.Helpers
                 case 4:
                     return 1.4;
                 case 5:
-                    return 5.5;
+                    return 1.5;
                 default:
                     return 0;
             }

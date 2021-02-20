@@ -12,12 +12,12 @@ namespace Gisys.WebApi.Domain.Services
     public class ConsultantService : IConsultantService
     {
 
-        private readonly GisysContext _gisysContext;
+        private readonly GisysContext _context;
         private readonly IMapper _mapper;
 
-        public ConsultantService(GisysContext gisysContext, IMapper mapper)
+        public ConsultantService(GisysContext context, IMapper mapper)
         {
-            _gisysContext = gisysContext;
+            _context = context;
             _mapper = mapper;
         }
 
@@ -25,11 +25,11 @@ namespace Gisys.WebApi.Domain.Services
         {
             double sum = 0;
 
-            var consultantCollection = _gisysContext.Consultants.AsNoTracking().ToList();
+            var consultantCollection = _context.Consultants.AsNoTracking().ToList();
 
             foreach(var consultant in consultantCollection)
             {
-                sum += Helpers.BonusCalculation.CalculateBillingPoints(consultant.ChargedHours, Helpers.BonusCalculation.LoyaltyFactor(consultant.YearOfEmployment));
+                sum += Helpers.BonusCalculation.CalculateBillingPoints(consultant.ChargedHours, Helpers.BonusCalculation.CalculateLoyaltyFactor(consultant.YearOfEmployment));
             }
 
             return sum;
@@ -37,14 +37,14 @@ namespace Gisys.WebApi.Domain.Services
 
         public double GetConsultantShareOfBonusPot(Guid consultantId)
         {
-            var consultant = _gisysContext.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
+            var consultant = _context.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
 
             if(consultant == null)
             {
                 return 0;
             }
 
-            double billingPoint = Helpers.BonusCalculation.CalculateBillingPoints(consultant.ChargedHours, Helpers.BonusCalculation.LoyaltyFactor(consultant.YearOfEmployment));
+            double billingPoint = Helpers.BonusCalculation.CalculateBillingPoints(consultant.ChargedHours, Helpers.BonusCalculation.CalculateLoyaltyFactor(consultant.YearOfEmployment));
 
             double Bk = billingPoint/SumOfBillingPoints(); // Bk = Dk1/Dt
 
@@ -53,7 +53,7 @@ namespace Gisys.WebApi.Domain.Services
 
         public double GetConsultantBonus(Guid consultantId, int netResult)
         {
-            var consultant = _gisysContext.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
+            var consultant = _context.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
 
             if (consultant == null)
             {
