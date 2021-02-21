@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gisys.WebApi.Repository.Gisys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Gisys.WebApi.DataTransferObjects.Configuration
 
         public MapConfiguration()
         {
-
+            CreateMap<ConsultantRequestDto, Consultant>();
+            CreateMap<Consultant, ConsultantResponseDto>();
         }
 
     }

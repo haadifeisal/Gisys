@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gisys.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultant(System.Guid)">
+            <summary>
+            Get consultant.
+            </summary>
+            <param name="consultantId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

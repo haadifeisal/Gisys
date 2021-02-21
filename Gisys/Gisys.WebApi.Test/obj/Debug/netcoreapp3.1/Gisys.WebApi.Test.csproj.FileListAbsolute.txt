@@ -145,3 +145,4 @@ C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi.Test\bin\D
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi.Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi.Test\bin\Debug\netcoreapp3.1\Gisys.WebApi.dll
 C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi.Test\bin\Debug\netcoreapp3.1\Gisys.WebApi.pdb
+C:\Users\Feisal Ali\OneDrive\Dokument\GitHub\Gisys\Gisys\Gisys.WebApi.Test\bin\Debug\netcoreapp3.1\Gisys.WebApi.xml
