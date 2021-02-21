@@ -4,11 +4,54 @@
         <name>Gisys.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultantCollection">
+            <summary>
+            Get a collection of consultants.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultant(System.Guid)">
             <summary>
-            Get consultant.
+            Get a consultant.
             </summary>
             <param name="consultantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.CreateConsultant(Gisys.WebApi.DataTransferObjects.ConsultantRequestDto)">
+            <summary>
+            Create a consultant.
+            </summary>
+            <param name="consultantRequestDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.UpdateConsultant(System.Guid,Gisys.WebApi.DataTransferObjects.ConsultantRequestDto)">
+            <summary>
+            Update a consultant.
+            </summary>
+            <param name="consultantId"></param>
+            <param name="consultantRequestDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.DeleteConsultant(System.Guid)">
+            <summary>
+            Delete a consultant.
+            </summary>
+            <param name="consultantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultantShareOfBonusPot(System.Guid)">
+            <summary>
+            Get Consultant Share Of Bonus Pot.
+            </summary>
+            <param name="consultantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultantBonus(System.Guid,System.Int32)">
+            <summary>
+            Get consultant bonus.
+            </summary>
+            <param name="consultantId"></param>
+            <param name="netResult"></param>
             <returns></returns>
         </member>
     </members>
