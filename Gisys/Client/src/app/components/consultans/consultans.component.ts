@@ -5,6 +5,8 @@ import { NetResult } from 'src/app/models/NetResult';
 import { ConsultantService } from 'src/app/services/consultant.service';
 import { NetResultService } from 'src/app/services/net-result.service';
 import { AddConsultantComponent } from '../add-consultant/add-consultant.component';
+import { SetNetresultComponent } from '../set-netresult/set-netresult.component';
+import { UpdateNetresultComponent } from '../update-netresult/update-netresult.component';
 
 @Component({
   selector: 'app-consultans',
@@ -54,7 +56,31 @@ export class ConsultansComponent implements OnInit {
     (cancel) => {
       console.log("Cancel Click");
     })
+   }
 
+   openUpdateResultModal(netResult: NetResult) {
+    const ref = this.modalService.open(UpdateNetresultComponent)
+    ref.componentInstance.netResult = netResult;
+
+    ref.result.then((yes) => {
+      this.getConsultantCollection();
+      this.getNetResult();
+    },
+    (cancel) => {
+      console.log("Cancel Click");
+    })
+   }
+   
+   openSetNetResultModal() {
+    const ref = this.modalService.open(SetNetresultComponent)
+
+    ref.result.then((yes) => {
+      this.getNetResult();
+      this.getConsultantCollection();
+    },
+    (cancel) => {
+      console.log("Cancel Click");
+    })
    }
 
 }

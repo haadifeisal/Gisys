@@ -50,7 +50,6 @@ export class EditConsultantComponent implements OnInit {
       yearOfEmployment: [consultant.yearOfEmployment, Validators.required],
       chargedHours: [ consultant.chargedHours, [Validators.required]]
     });
-
   }
 
 }

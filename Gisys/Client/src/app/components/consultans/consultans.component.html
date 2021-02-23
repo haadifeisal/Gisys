@@ -5,13 +5,19 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="">
+          <div class="col-md-3">
             <button class="btn btn-success btn-block" style="margin-bottom:20px;" (click)="openModal()">Add New Consultant</button>
+          </div>
+          <div class="col-md-3">
+            <button *ngIf="netResult == null" class="btn btn-success btn-block" style="margin-bottom:20px;" (click)="openSetNetResultModal()">Set Net Result</button>
           </div>
         </div>
         <div class="row">
-          <div class="">
-            <h1 style="margin-bottom:10px;">Net Result: <strong style="color:green;">{{netResult.net}}</strong></h1>
+          <div class="col-md-5">
+            <h1 style="margin-bottom:10px;" *ngIf="netResult != null">Net Result: <strong style="color:green;">{{netResult.net}}</strong></h1>
+          </div>
+          <div class="col-md-3">
+            <button *ngIf="netResult != null" class="btn btn-warning btn-block" style="margin-bottom:20px;" (click)="openUpdateResultModal(netResult)">Update Net Result</button>
           </div>
         </div>
         <div class="row">

@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ConsultantDetailComponent } from './components/consultant-detail/consultant-detail.component';
 import { EditConsultantComponent } from './components/edit-consultant/edit-consultant.component';
 import { AddConsultantComponent } from './components/add-consultant/add-consultant.component';
+import { UpdateNetresultComponent } from './components/update-netresult/update-netresult.component';
+import { SetNetresultComponent } from './components/set-netresult/set-netresult.component';
 
 const appRoutes: Routes = [   
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +30,9 @@ const appRoutes: Routes = [
     HomeComponent,
     ConsultantDetailComponent,
     EditConsultantComponent,
-    AddConsultantComponent
+    AddConsultantComponent,
+    UpdateNetresultComponent,
+    SetNetresultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+
+
+   <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Update Net Result</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="net">Net Result</label>
+        <div class="input-group">
+          <input type="number" formControlName="net" id="net" class="form-control" name="net">
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()" style="margin-right:20px;">Close</button>
+      <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+  </div>
+  
