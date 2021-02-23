@@ -14,6 +14,7 @@ namespace Gisys.WebApi.DataTransferObjects.Configuration
         {
             CreateMap<ConsultantRequestDto, Consultant>();
             CreateMap<Consultant, ConsultantResponseDto>();
+            CreateMap<NetResult, NetResultResponseDto>();
         }
 
     }

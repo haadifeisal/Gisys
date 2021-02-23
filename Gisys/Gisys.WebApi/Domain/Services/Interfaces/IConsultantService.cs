@@ -16,6 +16,6 @@ namespace Gisys.WebApi.Domain.Services.Interfaces
         bool DeleteConsultant(Guid consultantId);
         double SumOfBillingPoints();
         double GetConsultantShareOfBonusPot(Guid consultantId);
-        double GetConsultantBonus(Guid consultantId, int netResult);
+        double GetConsultantBonus(Guid consultantId);
     }
 }

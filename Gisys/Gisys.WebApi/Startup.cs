@@ -57,6 +57,7 @@ namespace Gisys.WebApi
             });
 
             services.AddScoped<IConsultantService, ConsultantService>();
+            services.AddScoped<INetResultService, NetResultService>();
 
             services.AddSwaggerGen(c =>
             {

@@ -18,6 +18,7 @@ namespace Gisys.WebApi.Repository.Gisys
         }
 
         public virtual DbSet<Consultant> Consultants { get; set; }
+        public virtual DbSet<NetResult> NetResults { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +40,17 @@ namespace Gisys.WebApi.Repository.Gisys
                     .HasColumnName("name");
 
                 entity.Property(e => e.YearOfEmployment).HasColumnName("yearOfEmployment");
+            });
+
+            modelBuilder.Entity<NetResult>(entity =>
+            {
+                entity.ToTable("NetResult");
+
+                entity.Property(e => e.NetResultId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("netResultId");
+
+                entity.Property(e => e.Net).HasColumnName("net");
             });
 
             OnModelCreatingPartial(modelBuilder);

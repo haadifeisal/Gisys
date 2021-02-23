@@ -115,7 +115,7 @@ namespace Gisys.WebApi.Domain.Services
             return Bk;
         }
 
-        public double GetConsultantBonus(Guid consultantId, int netResult)
+        public double GetConsultantBonus(Guid consultantId)
         {
             var consultant = _context.Consultants.AsNoTracking().FirstOrDefault(x => x.ConsultantId == consultantId);
 
@@ -124,7 +124,14 @@ namespace Gisys.WebApi.Domain.Services
                 return 0;
             }
 
-            var consultantBonus = Helpers.BonusCalculation.BonusPot(netResult) * GetConsultantShareOfBonusPot(consultant.ConsultantId);
+            var netResult = _context.NetResults.FirstOrDefault();
+
+            if(netResult == null)
+            {
+                return 0;
+            }
+
+            var consultantBonus = Helpers.BonusCalculation.BonusPot(netResult.Net) * GetConsultantShareOfBonusPot(consultant.ConsultantId);
 
             return Math.Round(consultantBonus, 0);
         }

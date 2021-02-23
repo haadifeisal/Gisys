@@ -1,0 +1,33 @@
+
+
+   <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Consultant</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <div class="input-group">
+          <input type="text" formControlName="name" id="name" class="form-control" name="name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Year of employment</label>
+        <div class="input-group">
+          <input type="number" formControlName="yearOfEmployment" id="yearOfEmployment" class="form-control" name="yearOfEmployment">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="chargedHours">Charged Hours</label>
+        <div class="input-group">
+            <input type="number" formControlName="chargedHours" id="chargedHours" class="form-control" name="chargedHours">
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()" style="margin-right: 20px;">Close</button>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+  </div>
+  

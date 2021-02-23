@@ -358,15 +358,21 @@ namespace Gisys.WebApi.Test.UnitTests
                 ChargedHours = 160,
                 YearOfEmployment = 1
             };
-
             _context.Consultants.Add(newConsultant2);
+
+            var newNetResult = new NetResult
+            {
+                NetResultId = Guid.NewGuid(),
+                Net = 100000
+            };
+            _context.NetResults.Add(newNetResult);
             _context.SaveChanges();
 
             var consultantService = new ConsultantService(_context, _mapper);
 
             //Act
-            var consultantBonus1 = consultantService.GetConsultantBonus(newConsultant.ConsultantId, 100000);
-            var consultantBonus2 = consultantService.GetConsultantBonus(newConsultant2.ConsultantId, 100000);
+            var consultantBonus1 = consultantService.GetConsultantBonus(newConsultant.ConsultantId);
+            var consultantBonus2 = consultantService.GetConsultantBonus(newConsultant2.ConsultantId);
 
             //Assert
             Assert.AreEqual(2628, consultantBonus1);

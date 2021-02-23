@@ -1,0 +1,22 @@
+
+  
+  <div class="row">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header">
+          <a href="#" [routerLink]="['/consultants']" class="btn btn-primary btn-sm"> View Consultants </a>
+          <h2>Consultant</h2>
+        </div>
+        <div class="body">
+          <ul class="list-group">
+            <li class="list-group-item">Name: {{consultant.name}}</li>
+            <li class="list-group-item">Years of employment: {{consultant.yearOfEmployment}}</li>
+            <li class="list-group-item">Charged hours: {{consultant.chargedHours}}</li>
+            <li class="list-group-item"><strong>Share of bonus pot: {{shareOfBonusPot}}</strong></li>
+            <li class="list-group-item"><strong>Bonus: {{bonus}}</strong></li>
+            <li class="list-group-item"><button type="button" class="btn btn-primary" (click)="openModal(consultant)">Edit</button><button type="button" style="margin-left: 20px" class="btn btn-danger" (click)="deleteConsultant(consultant.consultantId)">Delete</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

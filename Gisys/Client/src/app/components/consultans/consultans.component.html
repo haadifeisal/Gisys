@@ -1,0 +1,42 @@
+<div class="col-md-12 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-center"><i class="fa fa-user-md"></i> Consultants</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="">
+            <button class="btn btn-success btn-block" style="margin-bottom:20px;" (click)="openModal()">Add New Consultant</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="">
+            <h1 style="margin-bottom:10px;">Net Result: <strong style="color:green;">{{netResult.net}}</strong></h1>
+          </div>
+        </div>
+        <div class="row">
+          <table *ngIf="consultants?.length > 0; else noConsultants" class="table table-stripped">
+            <thead class="thead-dark">
+              <tr>
+                <th>Name</th>
+                <th>Year Of Employment</th>
+                <th>Charged Hours</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let consultant of consultants">
+                <td>{{consultant.name}}</td>
+                <td>{{consultant.yearOfEmployment}}</td>
+                <td>{{consultant.chargedHours}}</td>
+                <td><a href="#" [routerLink]="['/consultant-detail/'+consultant.consultantId]" class="btn btn-secondary btn-sm"> View Consultant </a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #noConsultants>
+          No Consultants.<hr />
+        </ng-template>
+      </div>
+    </div>
+  </div>

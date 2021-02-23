@@ -72,8 +72,14 @@ namespace Gisys.WebApi.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ConsultantResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CreateConsultant([FromBody] ConsultantRequestDto consultantRequestDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var consultant = _consultantService.CreateConsultant(consultantRequestDto);
 
             if (consultant == null)
@@ -97,6 +103,11 @@ namespace Gisys.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         public IActionResult UpdateConsultant([FromRoute] Guid consultantId, [FromBody] ConsultantRequestDto consultantRequestDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var consultant = _consultantService.UpdateConsultant(consultantId, consultantRequestDto);
 
             if (consultant == null)
@@ -153,14 +164,13 @@ namespace Gisys.WebApi.Controllers
         /// Get consultant bonus.
         /// </summary>
         /// <param name="consultantId"></param>
-        /// <param name="netResult"></param>
         /// <returns></returns>
         [HttpGet("{consultantId}/{netResult}")]
         [ProducesResponseType(typeof(double), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult GetConsultantBonus([FromRoute] Guid consultantId, [FromRoute] int netResult)
+        public IActionResult GetConsultantBonus([FromRoute] Guid consultantId)
         {
-            var bonus = _consultantService.GetConsultantBonus(consultantId, netResult);
+            var bonus = _consultantService.GetConsultantBonus(consultantId);
 
             if (bonus == 0)
             {

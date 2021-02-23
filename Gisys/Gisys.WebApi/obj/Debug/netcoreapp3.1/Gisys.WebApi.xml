@@ -46,12 +46,32 @@
             <param name="consultantId"></param>
             <returns></returns>
         </member>
-        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultantBonus(System.Guid,System.Int32)">
+        <member name="M:Gisys.WebApi.Controllers.ConsultantController.GetConsultantBonus(System.Guid)">
             <summary>
             Get consultant bonus.
             </summary>
             <param name="consultantId"></param>
-            <param name="netResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.NetResultController.GetNetResult">
+            <summary>
+            Get Net Result
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.NetResultController.CreateNetResult(Gisys.WebApi.DataTransferObjects.NetResultRequestDto)">
+            <summary>
+            Create Net Result.
+            </summary>
+            <param name="netResultRequestDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gisys.WebApi.Controllers.NetResultController.UpdateNetResult(System.Guid,Gisys.WebApi.DataTransferObjects.NetResultRequestDto)">
+            <summary>
+            Update Net Result.
+            </summary>
+            <param name="netResultId"></param>
+            <param name="netResultRequestDto"></param>
             <returns></returns>
         </member>
     </members>
