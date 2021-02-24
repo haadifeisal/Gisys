@@ -86,6 +86,8 @@ namespace Gisys.WebApi
             app.UseRouting();
             app.UseCors("AllowAllOrigin");
 
+            SeedDb.Populate(app);
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>

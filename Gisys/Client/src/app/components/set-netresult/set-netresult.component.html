@@ -15,8 +15,16 @@
           <input type="number" formControlName="net" id="net" class="form-control" name="net">
         </div>
       </div>
+      <div *ngIf="addForm.controls['net'].invalid && (addForm.controls['net'].dirty || addForm.controls['net'].touched)" class="alert alert-danger">
+        <div *ngIf="addForm.controls['net'].errors.required">
+          Net Result is required.
+        </div>
+      </div>
+      <div *ngIf="addForm.controls['net'].hasError('min')" class="alert alert-danger">
+        Net Result should be minimum 1
+      </div>
       <button type="button" class="btn btn-secondary" (click)="modal.dismiss()" style="margin-right:20px;">Close</button>
-      <button type="submit" class="btn btn-warning">Save</button>
+      <button type="submit" class="btn btn-warning" [disabled]="addForm.invalid">Save</button>
     </form>
   </div>
   

@@ -48,7 +48,7 @@ export class EditConsultantComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       name: [consultant.name, Validators.required],
       yearOfEmployment: [consultant.yearOfEmployment, Validators.required],
-      chargedHours: [ consultant.chargedHours, [Validators.required]]
+      chargedHours: [ consultant.chargedHours, [Validators.required, Validators.min(1)]]
     });
   }
 

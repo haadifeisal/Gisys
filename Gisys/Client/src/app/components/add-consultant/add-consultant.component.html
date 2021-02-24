@@ -13,11 +13,21 @@
         <div class="input-group">
           <input type="text" formControlName="name" id="name" class="form-control" name="name">
         </div>
+        <div *ngIf="addForm.controls['name'].invalid && (addForm.controls['name'].dirty || addForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="addForm.controls['name'].errors.required">
+          Name is required.
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="dateOfBirth">Year of employment</label>
         <div class="input-group">
           <input type="number" formControlName="yearOfEmployment" id="yearOfEmployment" class="form-control" name="yearOfEmployment">
+        </div>
+        <div *ngIf="addForm.controls['yearOfEmployment'].invalid && (addForm.controls['yearOfEmployment'].dirty || addForm.controls['yearOfEmployment'].touched)" class="alert alert-danger">
+          <div *ngIf="addForm.controls['yearOfEmployment'].errors.required">
+            Year Of Employment is required.
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -25,9 +35,17 @@
         <div class="input-group">
             <input type="number" formControlName="chargedHours" id="chargedHours" class="form-control" name="chargedHours">
         </div>
+        <div *ngIf="addForm.controls['chargedHours'].invalid && (addForm.controls['chargedHours'].dirty || addForm.controls['chargedHours'].touched)" class="alert alert-danger">
+          <div *ngIf="addForm.controls['chargedHours'].errors.required">
+            Charged Hours is required.
+          </div>
+        </div>
+        <div *ngIf="addForm.controls['chargedHours'].hasError('min')" class="alert alert-danger">
+          Charged hours should be minimum 1
+        </div>
       </div>
       <button type="button" class="btn btn-secondary" (click)="modal.dismiss()" style="margin-right: 20px;">Close</button>
-      <button type="submit" class="btn btn-primary">Save changes</button>
+      <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Save changes</button>
     </form>
   </div>
   

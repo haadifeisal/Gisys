@@ -44,7 +44,7 @@ export class UpdateNetresultComponent implements OnInit {
 
   private setForm(netResult: NetResult) {
     this.editForm = this.formBuilder.group({
-      net: [netResult.net, Validators.required]
+      net: [netResult.net, [Validators.required, Validators.min(1)]]
     });
   }
 

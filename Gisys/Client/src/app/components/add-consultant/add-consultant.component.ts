@@ -49,7 +49,7 @@ export class AddConsultantComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       name: [consultant.name, Validators.required],
       yearOfEmployment: [consultant.yearOfEmployment, Validators.required],
-      chargedHours: [ consultant.chargedHours, [Validators.required]]
+      chargedHours: [ consultant.chargedHours, [Validators.required, Validators.min(1)]]
   });
 
 }

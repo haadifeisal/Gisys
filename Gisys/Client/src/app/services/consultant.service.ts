@@ -73,5 +73,14 @@ export class ConsultantService {
       })
     );
   }
+
+  deleteConsultant(id: string): Observable<boolean> {
+    return this.http.delete(this.apiUrl + '/' + id )
+    .pipe(
+      map(data => {
+        return data.json();
+      })
+    );
+  }
   
 }

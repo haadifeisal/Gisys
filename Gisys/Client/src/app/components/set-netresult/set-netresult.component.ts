@@ -44,7 +44,7 @@ export class SetNetresultComponent implements OnInit {
 
   private setForm(netResultRequestDto: NetResultRequestDto) {
     this.addForm = this.formBuilder.group({
-      net: [netResultRequestDto.net, Validators.required]
+      net: [netResultRequestDto.net, [Validators.required, Validators.min(1)]]
     });
   }
 

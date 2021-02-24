@@ -51,7 +51,6 @@
             Get consultant bonus.
             </summary>
             <param name="consultantId"></param>
-            <param name="netResult"></param>
             <returns></returns>
         </member>
         <member name="M:Gisys.WebApi.Controllers.NetResultController.GetNetResult">

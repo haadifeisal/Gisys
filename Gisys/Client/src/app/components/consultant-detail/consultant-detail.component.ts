@@ -22,7 +22,7 @@ export class ConsultantDetailComponent implements OnInit {
   constructor(
     private consultantService: ConsultantService,
     private router: ActivatedRoute,
-    private rout: Router,
+    private route: Router,
     private flashM: FlashMessagesService,
     private fb: FormBuilder, 
     private modalService: NgbModal
@@ -71,7 +71,14 @@ export class ConsultantDetailComponent implements OnInit {
    }
 
    deleteConsultant(consultantId: string){
-     alert("Delete: " + consultantId);
+    if(confirm("Are you sure you want to delete consultant " + this.consultant.name)) {
+      this.consultantService.deleteConsultant(this.id).subscribe((data: boolean) => {
+        if(data == true){
+          this.route.navigate(['/consultants']);
+        }
+      })
+    }
+    
    }
 
 

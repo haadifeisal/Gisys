@@ -14,9 +14,17 @@
         <div class="input-group">
           <input type="number" formControlName="net" id="net" class="form-control" name="net">
         </div>
+        <div *ngIf="editForm.controls['net'].invalid && (editForm.controls['net'].dirty || editForm.controls['net'].touched)" class="alert alert-danger">
+          <div *ngIf="editForm.controls['net'].errors.required">
+            Net Result is required.
+          </div>
+        </div>
+        <div *ngIf="editForm.controls['net'].hasError('min')" class="alert alert-danger">
+          Net Result should be minimum 1
+        </div>
       </div>
       <button type="button" class="btn btn-secondary" (click)="modal.dismiss()" style="margin-right:20px;">Close</button>
-      <button type="submit" class="btn btn-warning">Update</button>
+      <button type="submit" class="btn btn-warning" [disabled]="editForm.invalid">Update</button>
     </form>
   </div>
   
